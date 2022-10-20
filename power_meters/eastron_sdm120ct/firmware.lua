@@ -10,6 +10,8 @@ function main()
     enapter.log("RS-485 failed: "..result.." "..rs485.err_to_str(result), "error", true)
   end
 
+  print("Hello")
+
   scheduler.add(30000, send_properties)
   scheduler.add(1000, send_telemetry)
 end
