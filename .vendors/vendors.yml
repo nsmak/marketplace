@@ -1,0 +1,14 @@
+- id: BOSCH
+  display_name: Bosch
+  icon_url: https://bosch.com/logo.png
+  website:  https://bosch.com
+
+- id: SAMSUNG
+  display_name: Samsung
+  icon_url: https://samsung.com/logo.png
+  website: https://samsung.com
+
+- id: APPLE
+  display_name: Apple
+  icon_url: https://apple.com/logo.png
+  website: https://samsung.com
