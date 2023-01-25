@@ -4,8 +4,8 @@ display_name: Alarm sensor connected to Sonoff 433 RF Bridge
 description: >
   This Enapter Blueprint enables support of different alarm sensors connected to
   Sonoff 433 RF Bridge in Enapter Cloud via eWelink REST API.
-icon: alarm-light-outline
-vendor: BOSCH
+icon: enapter-alarm-sensor
+vendor: sonoff
 author: enapter
 contributors:
   - alexandershalin
@@ -15,7 +15,7 @@ support:
   url: https://enapter.com/support
   email: support@enapter.com
 license: MIT
-verification_level: community_tested
+verification_level: verified
 
 communication_module:
   product: ENP-VIRTUAL
