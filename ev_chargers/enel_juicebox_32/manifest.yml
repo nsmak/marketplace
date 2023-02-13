@@ -14,7 +14,7 @@ support:
 verification_level: verified
 
 communication_module:
-  product: ENP-VIRTUAL
+  product: ENP-SUPER
   lua_file: firmware.lua
 
 properties:
