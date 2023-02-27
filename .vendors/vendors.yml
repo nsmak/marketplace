@@ -8,10 +8,25 @@
   icon_url: https://raw.githubusercontent.com/Enapter/marketplace/main/.vendors/icons/pylontech.png
   website: https://en.pylontech.com.cn
 
+  - id: pylontech-2
+  display_name: Pylontech
+  icon_url: https://raw.githubusercontent.com/Enapter/marketplace/main/.vendors/icons/pylontech-2.png
+  website: https://en.pylontech.com.cn
+
 - id: seneca
   display_name: Seneca
   icon_url: https://raw.githubusercontent.com/Enapter/marketplace/main/.vendors/icons/seneca.png
   website: https://www.seneca.it/en/
+
+- id: seneca-3
+  display_name: Seneca
+  icon_url: https://raw.githubusercontent.com/Enapter/marketplace/main/.vendors/icons/seneca.png
+  website: https://www.seneca3.it/en/
+
+- id: tesla
+  display_name: Tesla
+  icon_url: https://raw.githubusercontent.com/Enapter/marketplace/main/.vendors/icons/tesla-energy.png
+  website: https://www.tesla.com/energy
 
 - id: tesla
   display_name: Tesla
