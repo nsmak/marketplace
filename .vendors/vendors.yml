@@ -8,7 +8,7 @@
   icon_url: https://raw.githubusercontent.com/Enapter/marketplace/main/.vendors/icons/pylontech.png
   website: https://en.pylontech.com.cn
 
-  - id: pylontech-2
+- id: pylontech-2
   display_name: Pylontech
   icon_url: https://raw.githubusercontent.com/Enapter/marketplace/main/.vendors/icons/pylontech-2.png
   website: https://en.pylontech.com.cn
