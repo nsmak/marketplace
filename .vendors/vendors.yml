@@ -21,7 +21,7 @@
 - id: seneca-3
   display_name: Seneca
   icon_url: https://raw.githubusercontent.com/Enapter/marketplace/main/.vendors/icons/seneca.png
-  website: https://www.seneca3.it/en/
+  website: https://www.seneca.it/en/total
 
 - id: tesla
   display_name: Tesla
