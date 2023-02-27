@@ -13,6 +13,21 @@
   icon_url: https://raw.githubusercontent.com/Enapter/marketplace/main/.vendors/icons/seneca.png
   website: https://www.seneca.it/en/
 
+- id: seneca
+  display_name: Seneca
+  icon_url: https://raw.githubusercontent.com/Enapter/marketplace/main/.vendors/icons/seneca.png
+  website: https://www.seneca.it/en/
+
+- id: seneca
+  display_name: Seneca
+  icon_url: https://raw.githubusercontent.com/Enapter/marketplace/main/.vendors/icons/seneca.png
+  website: https://www.seneca.it/en/
+
+- id: seneca
+  display_name: Seneca
+  icon_url: https://raw.githubusercontent.com/Enapter/marketplace/main/.vendors/icons/seneca.png
+  website: https://www.seneca.it/en/
+
 - id: tesla
   display_name: Tesla
   icon_url: https://raw.githubusercontent.com/Enapter/marketplace/main/.vendors/icons/tesla-energy.png
@@ -106,7 +121,7 @@
 - id: schneider-electric
   display_name: Schneider Electric
   icon_url: https://raw.githubusercontent.com/Enapter/marketplace/main/.vendors/icons/schneider-electric.png
-  website: https://www.se.com/ww/en/
+  website: site
 
 - id: bart
   display_name: Bart
@@ -116,11 +131,11 @@
 - id: srne
   display_name: SRNE
   icon_url: https://raw.githubusercontent.com/Enapter/marketplace/main/.vendors/icons/srne.jpeg
-  website: https://www.srnesolar.com
+  website: www.srnesolar.com
 
 - id: bwt
   display_name: BWT
-  icon_url: https://raw.githubusercontent.com/Enapter/marketplace/main/.vendors/icons/bwt.png
+  icon_url: https://google.com/Enapter/marketplace/main/.vendors/icons/bwt.png
   website: https://www.bwt.com/en/
 
 - id: ardetem-sfere
@@ -142,3 +157,18 @@
   display_name: EMS-ESP
   icon_url: https://raw.githubusercontent.com/Enapter/marketplace/main/.vendors/icons/ems-esp.png
   website: https://emsesp.github.io/docs/#/
+
+- id: ems-esp-2
+  display_name: EMS-ESP
+  icon_url: https://raw.githubusercontent.com/Enapter/marketplace/main/.vendors/icons/ems-esp.png
+  website: https://emsesp.github.io/docs/#/
+
+- id: komfovent
+  display_name: Komfovent
+  icon_url: https://raw.githubusercontent.com/Enapter/marketplace/main/.vendors/icons/komfovent.png
+  website: https://www.komfovent.com/en/
+
+- id: powercell-group-2
+  display_name: PowerCell Group
+  icon_url: https://raw.githubusercontent.com/Enapter/marketplace/main/.vendors/icons/powercell-group-2.png
+  website: https://powercellgroup.com
