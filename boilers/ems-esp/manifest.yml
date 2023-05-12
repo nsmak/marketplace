@@ -5,7 +5,7 @@
 
 blueprint_spec: device/1.0
 
-display_name: Buderus GB172i (EMS-ESP)
+display_name: Gas Boiler (EMS Bus)
 description: A domestic gas boiler equipement.
 icon: enapter-gas-boiler
 vendor: ems-esp
@@ -13,7 +13,7 @@ author: enapter
 contributors:
   - nkrasko
 support:
-  url: https://enapter.com/support
+  url: https://go.enapter.com/enapter-blueprint-support
   email: support@enapter.com
 license: MIT
 verification_level: verified
@@ -339,7 +339,6 @@ commands:
         display_name: Heating
         description: Enable or Disable Heating
         type: boolean
-        required: true
       heating_temp:
         display_name: Heating Temperature
         description: Heating temperature
