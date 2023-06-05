@@ -1,12 +1,3 @@
-- id: alarm-with-sonoff-433-rf-bridge
-  display_name: Alarm sensor connected to Sonoff 433 RF Bridge
-  description: Alarm sensor connected to Sonoff 433 RF Bridge via eWelink REST API Server.
-  icon: enapter-alarm-sensor
-  vendor: sonoff
-  category: alarms
-  blueprint_options:
-    - blueprint: alarms/alarm_with_sonoff_433_rf_bridge
-
 - id: pressure-sensor
   display_name: Pressure Sensor
   description: Any analog pressure sensor integrated using voltage-based analog input interface.
