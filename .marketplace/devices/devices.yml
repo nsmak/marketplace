@@ -76,7 +76,7 @@
       display_name: ENP-RS485
       description: |
         Use CAN port for communication with monitoring system.
-        CAN port availability depends on factory configuration.
+        CAN port availability depends on factory configuration
 
 - id: bosch-gas-boiler-ems-bus
   display_name: Bosch Gas Boiler (EMS bus)
