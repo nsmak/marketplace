@@ -19,6 +19,14 @@ const (
 
 var errLinterFailed = errors.New("linter failed")
 
+type VerificationLevel = string
+
+const (
+  VerificationLevelReadyForTesting VerificationLevel = "ready_for_testing"
+  VerificationLevelCommunityTested VerificationLevel = "community_tested"
+  VerificationLevelVerified        VerificationLevel = "verified"
+)
+
 type vendorID = string
 
 type Vendor struct {
@@ -36,9 +44,10 @@ type Device struct {
 }
 
 type BlueprintOption struct {
-  Blueprint   yaml.Node `yaml:"blueprint"`
-  DisplayName yaml.Node `yaml:"display_name"`
-  Description yaml.Node `yaml:"description"`
+  Blueprint         yaml.Node `yaml:"blueprint"`
+  DisplayName       yaml.Node `yaml:"display_name"`
+  Description       yaml.Node `yaml:"description"`
+  VerificationLevel yaml.Node `yaml:"verification_level"`
 }
 
 func main() {
@@ -47,7 +56,7 @@ func main() {
 
   if err := run(*marketplacePath, flag.Args()); err != nil {
     if !errors.Is(err, errLinterFailed) {
-      fmt.Printf("::error:: failed run marketplace vendors validation %s\n", err)
+      fmt.Printf("::error:: failed run marketplace devcies validation %s\n", err)
     }
     os.Exit(1)
   }
@@ -70,7 +79,7 @@ func run(marketplacePath string, changedFilesPaths []string) error {
 
   err = validateDevices(devices, vendorIDs)
   if err != nil {
-    return fmt.Errorf("validate vendors: %w", err)
+    return fmt.Errorf("validate devices: %w", err)
   }
 
   return nil
@@ -280,13 +289,30 @@ func validateBlueprintOptions(name string, node yaml.Node) (bool, error) {
       return false, err
     }
 
+    if !checkRequiredAndNotEmpty(name+".verification_level", opt.VerificationLevel) {
+      return false, err
+    }
+
+    switch opt.VerificationLevel.Value {
+    case VerificationLevelVerified,
+      VerificationLevelReadyForTesting,
+      VerificationLevelCommunityTested:
+    default:
+      logDeviceWarning(
+        opt.VerificationLevel.Line,
+        opt.VerificationLevel.Column,
+        "invalid value verification_level should be only verified, community_tested or ready_for_testing",
+      )
+      return false, nil
+    }
+
     if len(opts) > 1 {
       if !checkRequiredAndNotEmpty(name+".display_name", opt.DisplayName) {
         return false, nil
       }
 
       if !checkRequiredAndNotEmpty(name+".description", opt.Description) {
-        return false, err
+        return false, nil
       }
     }
   }
