@@ -41,17 +41,28 @@ telemetry:
     enum:
       - ok
       - error
-  h2_concentration:
+  sensor1_h2_concentration:
     type: float
     unit: '%LEL'
-    display_name: H2 Concentration
-  volts:
+    display_name: Sensor 1 H2 Concentration
+  sensor2_h2_concentration:
+    type: float
+    unit: '%LEL'
+    display_name: Sensor 2 H2 Concentration
+  sensor1_volts:
     type: float
     unit: V
-    display_name: Voltage
-  sensor_status:
+    display_name: Sensor 1 Voltage
+  sensor2_volts:
+    type: float
+    unit: V
+    display_name: Sensor 2 Voltage
+  sensor1_status:
     type: integer
-    display_name: Sensor Status
+    display_name: Sensor 1 Status
+  sensor2_status:
+    type: integer
+    display_name: Sensor 2 Status
 
 alerts:
   not_configured:
@@ -108,10 +119,17 @@ commands:
     ui:
       icon: wrench-outline
     arguments:
-      sensor:
+      sensor1:
         required: true
-        display_name: Sensor Number
-        description: Number of sensor to monitor.
+        display_name: Sensor 1 Number
+        description: Number/ID of sensor to monitor as configured in control panel.
+        type: integer
+        min: 1
+        max: 999
+      sensor2:
+        required: true
+        display_name: Sensor 2 Number
+        description: Number/ID of sensor to monitor as configured in control panel.
         type: integer
         min: 1
         max: 999
@@ -123,6 +141,6 @@ commands:
 
 .cloud:
   category: sensors
-  mobile_main_chart: h2_concentration
   mobile_telemetry:
-    - h2_concentration
+    - sensor1_h2_concentration
+    - sensor2_h2_concentration

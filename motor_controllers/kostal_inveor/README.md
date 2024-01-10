@@ -1,8 +1,6 @@
-# IGD TOC 635
+# KOSTAL INVEOR MP/MP Modular/MPP/M
 
-This [Enapter Device Blueprint](https://go.enapter.com/marketplace-readme) integrates **International Gas Detectors TOC 635** - an addressable gas detector control panel [ModBus RTU](https://go.enapter.com/developers-enapter-modbus) over [RS-485 communication interface](https://go.enapter.com/developers-enapter-rs485).
-
-The blueprint supports a **single** gas sensor connected to the panel.
+This [Enapter Device Blueprint](https://go.enapter.com/marketplace-readme) integrates **KOSTAL INVEOR** - variable frequency drives with [ModBus RTU](https://go.enapter.com/developers-enapter-modbus) over [RS-485 communication interface](https://go.enapter.com/developers-enapter-rs485).
 
 ## Connect to Enapter
 
@@ -13,4 +11,5 @@ The blueprint supports a **single** gas sensor connected to the panel.
 
 ## References
 
-- [IGD TOC 635 Manual](https://www.internationalgasdetectors.com/wp-content/uploads/2020/08/SL-014-TOC-635-Manual.pdf);
+- [KOSTAL INVEOR Products Page](https://go.enapter.com/kostal_inveor_products_page)
+- [KOSTAL INVEOR Modbus Manual](https://go.enapter.com/kostal_inveor_modbus_manual)

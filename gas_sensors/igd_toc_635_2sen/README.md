@@ -1,6 +1,8 @@
-# Alicat Scientific Mass Flow Meter
+# IGD TOC 635
 
-This [Enapter Device Blueprint](https://go.enapter.com/marketplace-readme) integrates **Alicat Scientific M-10SLPM-D-485** - mass flow meter which monitors mixed gases in changing process conditions via [ModBus RTU](https://go.enapter.com/developers-enapter-modbus) over [RS-485](https://go.enapter.com/developers-enapter-rs485). The device also supports [RS-232 communication interface](https://go.enapter.com/developers-enapter-rs232).
+This [Enapter Device Blueprint](https://go.enapter.com/marketplace-readme) integrates **International Gas Detectors TOC 635** - an addressable gas detector control panel [ModBus RTU](https://go.enapter.com/developers-enapter-modbus) over [RS-485 communication interface](https://go.enapter.com/developers-enapter-rs485).
+
+The blueprint supports **two** gas sensors connected to the panel.
 
 ## Connect to Enapter
 
@@ -11,5 +13,4 @@ This [Enapter Device Blueprint](https://go.enapter.com/marketplace-readme) integ
 
 ## References
 
-- [Operating manual for mass flow meters](https://go.enapter.com/alicat-sci-10slpm-d485-manual);
-- [Modbus RTU/TCP manual](https://go.enapter.com/alicat-sci-flowmeter-modbus).
+- [IGD TOC 635 Manual](https://www.internationalgasdetectors.com/wp-content/uploads/2020/08/SL-014-TOC-635-Manual.pdf);

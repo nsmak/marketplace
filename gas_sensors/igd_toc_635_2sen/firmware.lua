@@ -6,7 +6,8 @@ BAUD_RATE = 19200
 DATA_BITS = 8
 STOP_BITS = 1
 PARITY = 'N'
-SENSOR_NUMBER_CONFIG = 'sensor'
+SENSOR1_NUMBER_CONFIG = 'sensor1'
+SENSOR2_NUMBER_CONFIG = 'sensor2'
 
 rs485_initialised = true
 
@@ -18,7 +19,8 @@ function main()
   end
 
   config.init({
-    [SENSOR_NUMBER_CONFIG] = { type = 'number', required = true },
+    [SENSOR1_NUMBER_CONFIG] = { type = 'number', required = true },
+    [SENSOR2_NUMBER_CONFIG] = { type = 'number', required = true },
   })
 
   scheduler.add(30000, send_properties)
@@ -38,24 +40,34 @@ function build_telemetry()
     return { status = 'error', alerts = { 'rs485_init_failed' } }
   end
 
-  local sensor_number, err = config.read(SENSOR_NUMBER_CONFIG)
+  local sensor1_number, err = config.read(SENSOR1_NUMBER_CONFIG)
   if err then
     enapter.log('cannot read config: ' .. tostring(err), 'error')
     return { status = 'error', alerts = { 'cannot_read_config' } }
   end
 
-  if not sensor_number then
+  local sensor2_number, err = config.read(SENSOR2_NUMBER_CONFIG)
+  if err then
+    enapter.log('cannot read config: ' .. tostring(err), 'error')
+    return { status = 'error', alerts = { 'cannot_read_config' } }
+  end
+
+  if not sensor1_number or not sensor2_number then
     return { status = 'error', alerts = { 'not_configured' } }
   end
 
-  return read_telemetry(sensor_number)
+  local telemetry = { status = 'ok', communication_status = 'ok' }
+  read_telemetry(telemetry, 1, sensor1_number)
+  read_telemetry(telemetry, 2, sensor2_number)
+
+  return telemetry
 end
 
-function read_telemetry(sensor_number)
+function read_telemetry(telemetry, num, id)
   local qreads = {
-    { type = 'inputs', addr = ADDRESS, reg = 30000 + sensor_number, count = 1, timeout = 1000 },
-    { type = 'inputs', addr = ADDRESS, reg = 31000 + sensor_number, count = 1, timeout = 1000 },
-    { type = 'inputs', addr = ADDRESS, reg = 33000 + sensor_number, count = 1, timeout = 1000 },
+    { type = 'inputs', addr = ADDRESS, reg = 30000 + id, count = 1, timeout = 1000 },
+    { type = 'inputs', addr = ADDRESS, reg = 31000 + id, count = 1, timeout = 1000 },
+    { type = 'inputs', addr = ADDRESS, reg = 33000 + id, count = 1, timeout = 1000 },
   }
   local results, err = qmodbus.read(qreads)
 
@@ -64,30 +76,24 @@ function read_telemetry(sensor_number)
     return { status = 'error', communication_status = 'error', alerts = { 'communication_failed' } }
   end
 
-  local telemetry = { status = 'ok', communication_status = 'ok' }
-
   for i, result in ipairs(results) do
     if result.errmsg then
-      enapter.log(
-        'Error reading Modbus register ' .. tostring(qreads[i].reg) .. ': ' .. result.errmsg,
-        'error',
-        true
-      )
+      enapter.log('Error reading Modbus register ' .. tostring(qreads[i].reg) .. ': ' .. result.errmsg, 'error', true)
       telemetry['communication_status'] = 'error'
       telemetry['alerts'] = { 'communication_failed' }
       break
     end
   end
 
-  telemetry['h2_concentration'] = convert_value(results[1].data, 10, -10)
-  telemetry['volts'] = convert_value(results[2].data, 100, 0)
-  telemetry['sensor_status'] = uint16(results[3].data)
+  telemetry['sensor' .. tostring(num) .. '_h2_concentration'] = convert_value(results[1].data, 10, -10)
+  telemetry['sensor' .. tostring(num) .. '_volts'] = convert_value(results[2].data, 100, 0)
+  telemetry['sensor' .. tostring(num) .. '_status'] = uint16(results[3].data)
 
-  return update_telemetry_base_on_sensor_status(telemetry)
+  return update_telemetry_base_on_sensor_status(telemetry, num)
 end
 
-function update_telemetry_base_on_sensor_status(telemetry)
-  local sensor_status = telemetry['sensor_status']
+function update_telemetry_base_on_sensor_status(telemetry, num)
+  local sensor_status = telemetry['sensor' .. tostring(num) .. '_status']
   if sensor_status == nil then
     return telemetry
   end
