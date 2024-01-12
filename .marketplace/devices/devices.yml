@@ -1,5 +1,5 @@
 - id: alarm-with-sonoff-433-rf-bridge
-  display_name: Alarm sensor connected to Sonoff 433 RF Bridge
+  display_name: Alarm sensor connected to Sonoff 433 RF Bridge-1
   description: Alarm sensor connected to Sonoff 433 RF Bridge via eWelink REST API Server.
   icon: enapter-alarm-sensor
   vendor: sonoff
