@@ -8,13 +8,22 @@
     - blueprint: alarms/alarm_with_sonoff_433_rf_bridge
       verification_level: verified
 
-- id: pressure-sensor
-  display_name: Pressure Sensor
+- id: pressure-sensor-voltage
+  display_name: Voltage Pressure Sensor
   description: Any analog pressure sensor integrated using voltage-based analog input interface.
   icon: enapter-gauge
   category: analog_io_modules
   blueprint_options:
-    - blueprint: analog_io_modules/pressure_sensor
+    - blueprint: analog_io_modules/pressure_sensor_voltage
+      verification_level: verified
+
+- id: pressure-sensor-current
+  display_name: 4-20mA Pressure Sensor
+  description: Any analog pressure sensor integrated using 4-20mA based analog input interface.
+  icon: enapter-gauge
+  category: analog_io_modules
+  blueprint_options:
+    - blueprint: analog_io_modules/pressure_sensor_current
       verification_level: verified
 
 - id: sfere-ucv-4001
@@ -170,17 +179,19 @@
       verification_level: verified
 
 - id: alicat-scientific-mass-flow-meter
-  display_name: Alicat scientific Mass Flow Meter
+  display_name: Alicat Scientific Mass Flow Meter
   description: Mass flow meter which monitors mixed gases in changing process conditions.
   icon: enapter-module-din-1
   vendor: alicat
   category: flow_meters
   blueprint_options:
     - blueprint: flow_meters/alicat_flow_meters_rs485_modbus
+      display_name: ENP-RS485 UCM Version
+      description: Use Enapter ENP-RS485 to integrate Alicat Scientific Mass Flow Meter.
       verification_level: verified
 
 - id: alicat-scientific-coda-mass-flow-meter
-  display_name: Alicat scientific CODA Mass Flow Meter
+  display_name: Alicat Scientific CODA Mass Flow Meter
   description: >
     Coriolis mass flow device which measures gas or liquid flows even when the fluid composition is changing or unknown
   icon: enapter-module-din-1
@@ -188,7 +199,13 @@
   category: flow_meters
   blueprint_options:
     - blueprint: flow_meters/alicat_coda_flow_meters_rs485_modbus
+      display_name: ENP-RS485 UCM Version
+      description: Use Enapter ENP-RS485 to integrate Alicat Scientific CODA Mass Flow Meter
       verification_level: verified
+    - blueprint: flow_meters/alicat_coda_flow_meters_rs485_modbus_arrakis_mk4
+      display_name: Arrakis MK4 IPC Version
+      description: Use Enapter Gateway on Arrakis MK4 IPC to integrate Alicat Scientific CODA Mass Flow Meter.
+      verification_level: ready_for_testing
 
 - id: bronkhorst-f111b
   display_name: Flow meter F-111B
@@ -284,6 +301,12 @@
   category: gas_sensors
   blueprint_options:
     - blueprint: gas_sensors/crowcon_xgard_bright
+      display_name: ENP-RS485 UCM Version
+      description: Use Enapter ENP-RS485 to integrate Crowcon Xgard Bright.
+      verification_level: verified
+    - blueprint: gas_sensors/crowcon_xgard_bright_arrakis_mk4
+      display_name: Arrakis MK4 IPC Version
+      description: Use Enapter Gateway on Arrakis MK4 IPC to integrate Crowcon Xgard Bright.
       verification_level: verified
 
 - id: crowcon-xgardiq
@@ -368,13 +391,19 @@
 
 - id: imt-solar-si-rS485tc-2t
   display_name: IMT Solar Irradiance Sensor Si-RS485TC-2T
-  description: Irradiance sensor.
+  description: Professional Irradiance Sensor
   icon: enapter-solar-panel
   vendor: imt
   category: irradiance_sensors
   blueprint_options:
     - blueprint: irradiance_sensors/imt_solar_si-rS485tc-2t
+      display_name: ENP-RS485 UCM Version
+      description: Use Enapter ENP-RS485 to integrate IMT Solar Irradiance Sensor Si-RS485TC-2T
       verification_level: verified
+    - blueprint: irradiance_sensors/imt_solar_si-rS485tc-2t_arrakis_mk4
+      display_name: Arrakis MK4 IPC Version
+      description: Use Enapter Gateway on Arrakis MK4 IPC to integrate IMT Solar Irradiance Sensor Si-RS485TC-2T
+      verification_level: ready_for_testing
 
 - id: eastron-sdm120ct
   display_name: Eastron SDM120CT
@@ -554,6 +583,16 @@
     - blueprint: solar_charge_controllers/srne_ml-2440
       verification_level: verified
 
+- id: voltronic-power--scc-mppt
+  display_name: Voltronic Power SCC MPPT
+  description: MPPT Solar Charge Controller
+  icon: enapter-inverter-solar
+  vendor: voltronic
+  category: solar_charge_controllers
+  blueprint_options:
+    - blueprint: solar_charge_controllers/voltronic_scc_mppt
+      verification_level: ready_for_testing
+
 - id: mpp-solar
   display_name: MPP Solar Inverter
   description: MPP Solar Inverters.
@@ -674,4 +713,67 @@
   category: analog_io_modules
   blueprint_options:
     - blueprint: analog_io_modules/seven_sensor_rain_gauge
+      verification_level: verified
+
+- id: sonoff_snzb-02d
+  display_name: SONOFF Temperature and Humidity Zigbee Sensor with LCD model SNZB-02D
+  description: Temperature and Humidity Sensor
+  icon: home-thermometer-outline
+  vendor: sonoff
+  category: climate_sensors
+  blueprint_options:
+    - blueprint: climate_sensors/sonoff_snzb-02d
+      verification_level: verified
+
+- id: hunan-rika-electronic-tech_rk_100-02
+  display_name: Hunan Rika Electronic Tech RK100-02
+  description: Professional Plastic Wind Speed Sensor (Wind Anemometer)
+  icon: weather-windy
+  vendor: rika
+  category: climate_sensors
+  blueprint_options:
+    - blueprint: climate_sensors/hunan-rika-electronic-tech_rk_100-02_arrakis_mk4
+      display_name: Arrakis MK4 IPC Version
+      description: |
+        Use Enapter Gateway on Arrakis MK4 IPC to integrate Hunan Rika Electronic Tech RK100-02 Wind Anemometer
       verification_level: ready_for_testing
+
+- id: xiaomi-jt-bz-01aq-a
+  display_name: Xiaomi JT-BZ-01AQ/A
+  description: Zigbee Natural Gas Detector
+  icon: enapter-hydrogen-sensor
+  vendor: xiaomi
+  category: gas_sensors
+  blueprint_options:
+    - blueprint: gas_sensors/JT-BZ-01AQ-A
+      verification_level: verified
+
+- id: aqara-jt-bz-01aq-a
+  display_name: Aqara JT-BZ-01AQ/A
+  description: Zigbee Natural Gas Detector
+  icon: enapter-hydrogen-sensor
+  vendor: aqara
+  category: gas_sensors
+  blueprint_options:
+    - blueprint: gas_sensors/JT-BZ-01AQ-A
+      verification_level: verified
+
+- id: xiaomi-sjcgq12lm
+  display_name: Xiaomi SJCGQ12LM
+  description: Zigbee Water Leak Sensor
+  icon: pipe-leak
+  vendor: xiaomi
+  category: water_sensors
+  blueprint_options:
+    - blueprint: water_sensors/SJCGQ12LM
+      verification_level: verified
+
+- id: aqara-sjcgq12lm
+  display_name: Aqara T1
+  description: Zigbee Water Leak Sensor
+  icon: pipe-leak
+  vendor: aqara
+  category: water_sensors
+  blueprint_options:
+    - blueprint: water_sensors/SJCGQ12LM
+      verification_level: verified

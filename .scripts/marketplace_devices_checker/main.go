@@ -294,7 +294,7 @@ func validateBlueprintOptions(name string, node Node) (bool, error) {
 		}
 
 		if !checkRequiredAndNotEmpty("verification_level", newNode(opt.VerificationLevel, opt.Blueprint)) {
-			return false, err
+			return false, nil
 		}
 
 		switch opt.VerificationLevel.Value {
