@@ -178,35 +178,6 @@
     - blueprint: ev_chargers/enel_juicebox_32
       verification_level: verified
 
-- id: alicat-scientific-mass-flow-meter
-  display_name: Alicat Scientific Mass Flow Meter
-  description: Mass flow meter which monitors mixed gases in changing process conditions.
-  icon: enapter-module-din-1
-  vendor: alicat
-  category: flow_meters
-  blueprint_options:
-    - blueprint: flow_meters/alicat_flow_meters_rs485_modbus
-      display_name: ENP-RS485 UCM Version
-      description: Use Enapter ENP-RS485 to integrate Alicat Scientific Mass Flow Meter.
-      verification_level: verified
-
-- id: alicat-scientific-coda-mass-flow-meter
-  display_name: Alicat Scientific CODA Mass Flow Meter
-  description: >
-    Coriolis mass flow device which measures gas or liquid flows even when the fluid composition is changing or unknown
-  icon: enapter-module-din-1
-  vendor: alicat
-  category: flow_meters
-  blueprint_options:
-    - blueprint: flow_meters/alicat_coda_flow_meters_rs485_modbus
-      display_name: ENP-RS485 UCM Version
-      description: Use Enapter ENP-RS485 to integrate Alicat Scientific CODA Mass Flow Meter
-      verification_level: verified
-    - blueprint: flow_meters/alicat_coda_flow_meters_rs485_modbus_arrakis_mk4
-      display_name: Arrakis MK4 IPC Version
-      description: Use Enapter Gateway on Arrakis MK4 IPC to integrate Alicat Scientific CODA Mass Flow Meter.
-      verification_level: ready_for_testing
-
 - id: bronkhorst-f111b
   display_name: Flow meter F-111B
   description: Digital thermal mass flow meter for gases
@@ -387,22 +358,6 @@
   category: hvac
   blueprint_options:
     - blueprint: hvac/mebay_generator_controller
-      verification_level: ready_for_testing
-
-- id: imt-solar-si-rS485tc-2t
-  display_name: IMT Solar Irradiance Sensor Si-RS485TC-2T
-  description: Professional Irradiance Sensor
-  icon: enapter-solar-panel
-  vendor: imt
-  category: irradiance_sensors
-  blueprint_options:
-    - blueprint: irradiance_sensors/imt_solar_si-rS485tc-2t
-      display_name: ENP-RS485 UCM Version
-      description: Use Enapter ENP-RS485 to integrate IMT Solar Irradiance Sensor Si-RS485TC-2T
-      verification_level: verified
-    - blueprint: irradiance_sensors/imt_solar_si-rS485tc-2t_arrakis_mk4
-      display_name: Arrakis MK4 IPC Version
-      description: Use Enapter Gateway on Arrakis MK4 IPC to integrate IMT Solar Irradiance Sensor Si-RS485TC-2T
       verification_level: ready_for_testing
 
 - id: eastron-sdm120ct
@@ -674,26 +629,6 @@
       display_name: Two sensors
       description: Connection scheme with two sensors connected to the gas detector control panel.
       verification_level: verified
-
-- id: deye-3-phase-hybrid-inverter
-  display_name: Deye Three-Phase Hybrid Inverter
-  description: Three-phase hybrid inverter models Deye SUN-4/5/6/7/8/10/12/15K-G06P3-EU-AM2.
-  icon: enapter-inverter-solar
-  vendor: deye
-  category: solar_inverters
-  blueprint_options:
-    - blueprint: solar_inverters/deye_sun-10k-sg04lp3-eu_solarman
-      verification_level: verified
-
-- id: sunsynk-3-phase-hybrid-inverter
-  display_name: Sunsynk Three-Phase Hybrid Inverter
-  description: Three-phase hybrid inverter models Sunsynk SYNK-8K-SG04LP3 / SYNK-10K-SG04LP3 / SYNK-12K-SG04LP3.
-  icon: enapter-inverter-solar
-  vendor: sunsynk
-  category: solar_inverters
-  blueprint_options:
-    - blueprint: solar_inverters/deye_sun-10k-sg04lp3-eu_solarman
-      verification_level: ready_for_testing
 
 - id: infrasensing_env-thum
   display_name: InfraSensing ENV-THUM
