@@ -1,0 +1,73 @@
+blueprint_spec: "device/2.0"
+
+display_name: Paladin
+
+properties:
+  age:
+    display_name: Age
+    type: integer
+  creator:
+    display_name: Creator
+    type: string
+  is_vegetarian:
+    display_name: Is Vegeterian
+    type: boolean
+  is_married:
+    display_name: Is Married
+    type: boolean
+  favorite_dishes:
+    display_name: Favorite Dishes
+    type: array_of_strings
+
+telemetry:
+  brain_power:
+    display_name: Brain Power
+    unit: kW
+    type: float
+  arms_state:
+    display_name: Arms state
+    type: string
+    enum:
+      - raised
+      - lowered
+  alive:
+    display_name: Is Alive
+    type: boolean
+  steps:
+    display_name: Steps counter
+    type: integer
+  offset_from_now:
+    display_name: Offset from now
+    type: integer
+
+command_groups:
+  brain:
+    display_name: Brain
+
+commands:
+  activate_brain:
+    group: brain
+    display_name: Activate Brain
+    description: Activates Frankenstein's brain.
+  deactivate_brain:
+    group: brain
+    display_name: Deactivate Brain
+    description: Deactivates Frankenstein's brain.
+  reset_brain:
+    group: brain
+    virtual: true
+    display_name: Reset Brain
+
+telemetry_preprocessor:
+  lua_file: telemetry_preprocessor.lua
+
+virtual_commands:
+  lua_file: virtual_commands.lua
+
+runtime:
+  type: lua
+  requirements:
+    - led
+    - ai
+  opts:
+    file: firmware.lua
