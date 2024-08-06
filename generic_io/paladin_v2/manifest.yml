@@ -67,7 +67,8 @@ virtual_commands:
 runtime:
   type: lua
   requirements:
+    - rl
+    - digitalout
     - led
-    - ai
   opts:
     file: firmware.lua
