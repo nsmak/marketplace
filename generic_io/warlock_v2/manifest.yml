@@ -69,5 +69,6 @@ runtime:
   requirements:
     - serial
     - modbus
+    - led
   opts:
     file: firmware.lua
