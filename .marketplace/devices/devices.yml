@@ -756,3 +756,7 @@
     - blueprint: generic_io/paladin_v2
       display_name: Paladin V2
       verification_level: verified
+
+    - blueprint: generic_io/priest_v2
+      display_name: Priest V2
+      verification_level: verified

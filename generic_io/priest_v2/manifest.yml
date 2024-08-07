@@ -1,6 +1,6 @@
 blueprint_spec: "device/2.0"
 
-display_name: Warlock
+display_name: Priest
 
 author: enapter
 
@@ -75,7 +75,6 @@ runtime:
   type: lua
   requirements:
     - rl
-    - digitalin
     - digitalout
   opts:
     file: firmware.lua
