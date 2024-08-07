@@ -76,5 +76,6 @@ runtime:
   requirements:
     - rl
     - digitalout
+    - led
   opts:
     file: firmware.lua
