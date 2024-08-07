@@ -75,6 +75,7 @@ runtime:
   type: lua
   requirements:
     - rl
+    - digitalin
     - digitalout
   opts:
     file: firmware.lua
