@@ -74,8 +74,8 @@ virtual_commands:
 runtime:
   type: lua
   requirements:
-    - rl
-    - digitalin
-    - digitalout
+    - serial
+    - modbus
+    - can
   opts:
     file: firmware.lua
