@@ -2,6 +2,13 @@ blueprint_spec: "device/2.0"
 
 display_name: The Creature
 
+author: enapter
+
+support:
+  url: https://go.enapter.com/enapter-blueprint-support
+  email: support@enapter.com
+license: MIT
+
 properties:
   age:
     display_name: Age
