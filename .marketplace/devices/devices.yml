@@ -734,6 +734,9 @@
     - blueprint: generic_io/warlock_v2
       display_name: Warlock V2
       verification_level: verified
+    - blueprint: generic_io/hunter_v1
+      display_name: Hunter V1
+      verification_level: verified
 
 - id: tricker
   display_name: The Tricker
