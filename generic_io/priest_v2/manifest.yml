@@ -77,5 +77,6 @@ runtime:
     - rl
     - digitalin
     - digitalout
+    - lua_api_ver_3
   opts:
     file: firmware.lua
