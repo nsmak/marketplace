@@ -106,3 +106,4 @@
     - opcua
     - snmp
     - http
+    - lua_api_ver_3
